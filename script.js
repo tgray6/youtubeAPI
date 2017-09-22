@@ -11,7 +11,7 @@ function getDataFromApi(searchTerm, callback) {
       part: 'snippet',
       key: apiKey,
       q: `${searchTerm}`,
-      maxResults: 10
+      maxResults: 12
     },
     dataType: 'json',
     type: 'GET',
