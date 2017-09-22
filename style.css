@@ -17,18 +17,23 @@ header{
 
 
 .js-search{
-margin-left: 100px;
+margin-left: 30px;
 margin-top: 20px;
+position: relative;
+display: inline-block;
 }
 
 .js-query{
 	width: 400px;
+  position: relative;
+  display: inline-block;
 }
 
 
 body{
   background-color: white;
   color: black;
+  margin: 0;
 }
 
 .flex-container{
@@ -41,6 +46,9 @@ body{
   margin-right: auto;
   flex-wrap: wrap;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1500px;
 }
 
 .box{
@@ -49,9 +57,8 @@ body{
 }
 
 .box1 {
-  background-color: gray;
-  width: 150px;
-  height: 150px;
+  width: 320px;
+  height: 180px;
   margin-left: 20px;
   margin-right: 20px;
 }
