@@ -13,11 +13,11 @@ function getDataFromApi(searchTerm, callback) {
       q: `${searchTerm}`,
       maxResults: 12
     },
-    dataType: 'json',
-    type: 'GET',
+    dataType: 'json',       // no need for this, youtube gets datatype MIME by default if no data is specified, which works.
+    type: 'GET',		    //no need to put a type of "GET" since we are running $.ajax(settings) after?
     success: callback
   };
-$.get(settings);
+$.ajax(settings);
 }
 
 function renderResult(result) {
