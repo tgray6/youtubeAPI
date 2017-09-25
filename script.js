@@ -1,5 +1,7 @@
 "use strict";
 
+//https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyC3G89xR3b04wA8_akZnWLe3-0Rl7Bm9fc&maxResults=12&q=zelda
+
 const apiKey = `AIzaSyC3G89xR3b04wA8_akZnWLe3-0Rl7Bm9fc`;
 
 const searchURL = 'https://www.googleapis.com/youtube/v3/search';
@@ -13,8 +15,8 @@ function getDataFromApi(searchTerm, callback) {
       q: `${searchTerm}`,
       maxResults: 12
     },
-    dataType: 'json',       // no need for this, youtube gets datatype MIME by default if no data is specified, which works.
-    type: 'GET',		    //no need to put a type of "GET" since we are running $.ajax(settings) after?
+    dataType: 'json',       
+    type: 'GET',		      
     success: callback
   };
 $.ajax(settings);
@@ -23,13 +25,13 @@ $.ajax(settings);
 function renderResult(result) {
  // console.log('displayResult', result);
   return `
-	  <div class="box box1"><a href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank"><img src="${result.snippet.thumbnails.medium.url}"></a>
+	  <div class="box box1"><a href="https://www.youtube.com/watch?v=${result.id.videoId}"target="_blank"><img src="${result.snippet.thumbnails.medium.url}"></a>
 	  </div>
       `;
 }
 
 function displayYoutubeSearchResults(data) {
- const searchResults = data.items.map((item, index) => renderResult(item));
+ const searchResults = data.items.map(renderResult);
  //console.log('displayYoutubeSearchResults', searchResults);
  $('.flex-container').html(searchResults);
 }
@@ -46,3 +48,9 @@ function watchSubmit() {
   });
 }
 $(watchSubmit);
+
+//check out postman
+
+//look into fetch api
+
+//do drills on fat arrow with filter and map, supplying filter and map with functions like fat arrow
