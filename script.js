@@ -49,8 +49,5 @@ function watchSubmit() {
 }
 $(watchSubmit);
 
-//check out postman
 
 //look into fetch api
-
-//do drills on fat arrow with filter and map, supplying filter and map with functions like fat arrow
