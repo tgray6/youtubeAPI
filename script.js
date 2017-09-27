@@ -48,6 +48,3 @@ function watchSubmit() {
   });
 }
 $(watchSubmit);
-
-
-//look into fetch api
