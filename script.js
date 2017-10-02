@@ -13,7 +13,7 @@ function getDataFromApi(searchTerm, callback) {
       part: 'snippet',
       key: apiKey,
       q: `${searchTerm}`,
-      maxResults: 12
+      maxResults: 40
     },
     dataType: 'json',       
     type: 'GET',		      
@@ -25,7 +25,10 @@ $.ajax(settings);
 function renderResult(result) {
  // console.log('displayResult', result);
   return `
-	  <div class="box box1"><a href="https://www.youtube.com/watch?v=${result.id.videoId}"target="_blank"><img src="${result.snippet.thumbnails.medium.url}"></a>
+	  <div class="box box1"><a href="https://www.youtube.com/watch?v=${result.id.videoId}"target="_blank">
+      <h3>${result.snippet.title}<h3>
+      <img src="${result.snippet.thumbnails.medium.url}" alt="no image available, click here for video"></a>
+      <p>${result.snippet.description}<p>
 	  </div>
       `;
 }
